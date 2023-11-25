@@ -1,0 +1,36 @@
+public static void main(String[] args) {
+    // Inicializar la variable avg
+    double avg = 0;
+
+    // Solicitar la cantidad de notas
+    System.out.print("Ingrese la cantidad de notas: ");
+    int size;
+    try {
+        size = Integer.parseInt(read.nextLine());
+    } catch (NumberFormatException e) {
+        System.out.println("El valor ingresado no es un número entero válido.");
+        return;
+    }
+
+    // Crear un arreglo con el tamaño especificado por el usuario
+    double[] grade = new double[size];
+
+    // Asignar notas aleatorias al arreglo
+    for (int i = 0; i < size; i++) {
+        grade[i] = Math.random() * 5.0;
+    }
+
+    // Imprimir las notas asignadas a los estudiantes
+    System.out.println("Notas asignadas:");
+    for (double g : grade) {
+        System.out.println(g);
+    }
+
+    // Calcular el promedio del estudiante
+    for (double g : grade) {
+        avg += g;
+    }
+
+    // Imprimir el promedio del estudiante
+    System.out.println("El promedio del estudiante es: " + avg / size);
+}
